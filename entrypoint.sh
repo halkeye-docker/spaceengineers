@@ -2,7 +2,7 @@
 # VARIABLES
 GAME_DIR="/appdata/space-engineers/SpaceEngineersDedicated"
 CONFIG_PATH="/appdata/space-engineers/instances/${INSTANCE_NAME}/SpaceEngineers-Dedicated.cfg"
-INSTANCE_IP=$(hostname -I | sed "s= ==g")
+INSTANCE_IP=${INSTANCE_IP:-$(hostname -I | sed "s= ==g")}
 
 echo "-------------------------------INSTALL & UPDATE------------------------------"
 /usr/games/steamcmd +force_install_dir ${GAME_DIR} +login anonymous +@sSteamCmdForcePlatformType windows +app_update 298740 +quit
